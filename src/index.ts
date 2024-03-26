@@ -5,7 +5,7 @@ export { default as CameraView } from './CameraView'
 
 /**
  * Checks user's permissions for accessing camera.
- * @return A promise that resolves to an object of type [PermissionResponse](#permissionresponse).
+ * @return A promise that resolves to an object of type PermissionResponse.
  */
 async function getCameraPermissionsAsync(): Promise<PermissionResponse> {
   return CameraManager.getCameraPermissionsAsync()
@@ -14,7 +14,7 @@ async function getCameraPermissionsAsync(): Promise<PermissionResponse> {
 /**
  * Asks the user to grant permissions for accessing camera.
  * On iOS this will require apps to specify an `NSCameraUsageDescription` entry in the **Info.plist**.
- * @return A promise that resolves to an object of type [PermissionResponse](#permissionresponse).
+ * @return A promise that resolves to an object of type PermissionResponse.
  */
 async function requestCameraPermissionsAsync(): Promise<PermissionResponse> {
   return CameraManager.requestCameraPermissionsAsync()
