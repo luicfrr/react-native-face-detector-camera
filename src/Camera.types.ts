@@ -106,7 +106,6 @@ export type FaceDetectionResult = {
    * Array of objects representing results of face detection.
    */
   faces: FaceFeature[]
-  // image: Image
   id: number
 }
 
@@ -243,13 +242,11 @@ export enum FaceDetectorMode {
   accurate = 2,
 }
 
-// @docsMissing
 export enum FaceDetectorLandmarks {
   none = 1,
   all = 2,
 }
 
-// @docsMissing
 export enum FaceDetectorClassifications {
   none = 1,
   all = 2,
@@ -257,17 +254,17 @@ export enum FaceDetectorClassifications {
 
 export type FaceDetectorSettings = {
   /**
-   * Whether to detect faces in fast or accurate mode. Use `FaceDetector.FaceDetectorMode.{fast, accurate}`.
+   * Whether to detect faces in fast or accurate mode. Use `FaceDetectorMode.{fast, accurate}`.
    */
   mode?: FaceDetectorMode
   /**
    * Whether to detect and return landmarks positions on the face (ears, eyes, mouth, cheeks, nose).
-   * Use `FaceDetector.FaceDetectorLandmarks.{all, none}`.
+   * Use `FaceDetectorLandmarks.{all, none}`.
    */
   detectLandmarks?: FaceDetectorLandmarks
   /**
    * Whether to run additional classifications on detected faces (smiling probability, open eye
-   * probabilities). Use `FaceDetector.FaceDetectorClassifications.{all, none}`.
+   * probabilities). Use `FaceDetectorClassifications.{all, none}`.
    */
   runClassifications?: FaceDetectorClassifications
   /**

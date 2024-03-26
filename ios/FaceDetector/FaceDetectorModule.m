@@ -27,8 +27,6 @@ static NSDictionary *defaultDetectorOptions = nil;
   return self;
 }
 
-// EX_EXPORT_MODULE(ExpoFaceDetector);
-
 - (NSDictionary *)constantsToExport
 {
   return [FaceDetectorUtils constantsToExport];

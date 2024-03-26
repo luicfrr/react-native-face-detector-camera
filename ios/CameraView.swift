@@ -554,7 +554,6 @@ public class CameraView: ExpoView, EXCameraInterface, EXAppLifecycleListener, AV
 
       print("faceDetector event call")
       self.onFacesDetected([
-        "type": "face",
         "faces": faces
       ])
     }
