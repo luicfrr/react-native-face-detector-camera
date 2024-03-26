@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "react-native-face-detector-camera": ["../src/index"],
+      "react-native-face-detector-camera/*": ["../src/*"]
+    }
+  }
+}

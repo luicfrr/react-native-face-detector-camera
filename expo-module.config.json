@@ -1,0 +1,17 @@
+{
+  "name": "react-native-face-detector-camera",
+  "platforms": [
+    "ios",
+    "android"
+  ],
+  "ios": {
+    "modules": [
+      "CameraModule"
+    ]
+  },
+  "android": {
+    "modules": [
+      "com.facedetectorcamera.CameraModule"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "react-native-face-detector-camera",
+  "version": "0.1.0",
+  "description": "A React Native front camera face detector module using MLKit ",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "expo-module build",
+    "clean": "expo-module clean",
+    "lint": "expo-module lint",
+    "test": "expo-module test",
+    "prepare": "expo-module prepare",
+    "prepublishOnly": "expo-module prepublishOnly",
+    "expo-module": "expo-module",
+    "open:ios": "open -a \"Xcode\" example/ios",
+    "open:android": "open -a \"Android Studio\" example/android"
+  },
+  "keywords": [
+    "react-native",
+    "expo",
+    "face detector",
+    "face detection"
+  ],
+  "repository": "https://github.com/nonam4/react-native-face-detector-camera",
+  "bugs": {
+    "url": "https://github.com/nonam4/react-native-face-detector-camera/issues"
+  },
+  "author": "nonam4 <nonam4@yahoo.com> (https://github.com/nonam4)",
+  "license": "MIT",
+  "homepage": "https://github.com/nonam4/react-native-face-detector-camera#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "expo-module-scripts": "^3.4.1",
+    "expo-modules-core": "^1.11.10"
+  },
+  "peerDependencies": {
+    "expo": "*",
+    "react": "*",
+    "react-native": "*"
+  }
+}
