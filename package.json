@@ -1,6 +1,6 @@
 {
   "name": "react-native-face-detector-camera",
-  "version": "0.1.0",
+  "version": "1.0.0-beta.1",
   "description": "A React Native front camera face detector module using MLKit ",
   "main": "build/index.js",
   "types": "build/index.d.ts",
