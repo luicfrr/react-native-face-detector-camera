@@ -25,14 +25,15 @@
   "bugs": {
     "url": "https://github.com/nonam4/react-native-face-detector-camera/issues"
   },
-  "author": "nonam4 <nonam4@yahoo.com> (https://github.com/nonam4)",
+  "author": "nonam4 (https://github.com/nonam4)",
   "license": "MIT",
   "homepage": "https://github.com/nonam4/react-native-face-detector-camera#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/react": "^18.0.25",
     "expo-module-scripts": "^3.4.1",
-    "expo-modules-core": "^1.11.10"
+    "expo-modules-core": "^1.11.10",
+    "react-native": "^0.73.6"
   },
   "peerDependencies": {
     "expo": "*",
