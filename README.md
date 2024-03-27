@@ -1,35 +1,153 @@
-# react-native-face-detector-camera
+## 📚 Introduction
 
-A React Native front camera face detector module using MLKit 
+`react-native-face-detector-camera` is an Expo module that uses device's front camera and MLKit to detect faces in real-time and visualize the detected face on the screen.
 
-# API documentation
+If this package helped you please give it a ⭐ on [GitHub](https://github.com/nonam4/react-native-face-detector-camera).
 
-- [Documentation for the main branch](https://github.com/expo/expo/blob/main/docs/pages/versions/unversioned/sdk/react-native-face-detector-camera.md)
-- [Documentation for the latest stable release](https://docs.expo.dev/versions/latest/sdk/react-native-face-detector-camera/)
+## ❗ Warning
 
-# Installation in managed Expo projects
+This package was created to meet a private project's need. New features are unlikely to be added. Bug fixes will be prioritized for those impacting project stability.
 
-For [managed](https://docs.expo.dev/archive/managed-vs-bare/) Expo projects, please follow the installation instructions in the [API documentation for the latest stable release](#api-documentation). If you follow the link and there is no documentation available then this library is not yet usable within managed projects &mdash; it is likely to be included in an upcoming Expo SDK release.
+Knowing this, you're free to use this package as it is.
 
-# Installation in bare React Native projects
+## 🏗️ Features
 
-For bare React Native projects, you must ensure that you have [installed and configured the `expo` package](https://docs.expo.dev/bare/installing-expo-modules/) before continuing.
+- Real-time face detection using front camera
+- Adjustable face detection
+- Take pictures using front camera only
+- Customizable styles
 
-### Add the package to your npm dependencies
+## 🧰 Installation
 
+```bash
+yarn add react-native-face-detector-camera
 ```
-npm install react-native-face-detector-camera
+
+## Plugin configuration
+
+You can configure `react-native-face-detector-camera` using built-in config plugin. This plugin allows you to change camera permission message that cannot be set at runtime and require you to build a new binary to take effect.
+
+Example:
+```
+{
+  "expo": {
+    ...,
+    "plugins": [
+      ["react-native-face-detector-camera",{
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera"
+      }]
+    ]
+  }
+}
 ```
 
-### Configure for iOS
+## 💡 Usage
+```jsx
+import {
+  useEffect,
+  useRef
+} from 'react'
+import {
+  StyleSheet,
+  View
+} from 'react-native'
+import {
+  CameraView,
+  useCameraPermissions,
+  FaceDetectorMode,
+  FaceDetectorClassifications,
+  FaceDetectionResult
+} from 'react-native-face-detector-camera'
 
-Run `npx pod-install` after installing the npm package.
+function App() {
+  const [
+    status,
+    requestPermission
+  ] = useCameraPermissions()
+  const camera = useRef<CameraView>( null )
 
+  useEffect( () => {
+    ( async () => {
+      if ( status?.granted ) return
+      await requestPermission()
+    } )()
+  }, [ status ] )
 
-### Configure for Android
+  function processFaceDetection( {
+    faces
+  }: FaceDetectionResult ) {
+    console.log( 'faces', faces )
+    if ( faces.length <= 0 ) return
 
+    const {
+      size,
+      origin
+    } = faces[ 0 ].bounds
+    
+    // handle face position on screen
+    if( 
+      // size.width|height >= ...
+      // size.width|height <= ...
+      // origin.x >= ...
+      // origin.x <= ...
+      // origin.y >= ...
+      // origin.y <= ...
+     ) {
+      handleTakePicture()
+    }
+  }
 
+  function handleTakePicture() {
+    if ( !camera.current ) {
+      console.log( 'camera ref is not valid' )
+      return
+    }
 
-# Contributing
+    camera.current.takePictureAsync( {
+      skipProcessing: true,
+      onPictureSaved: ( async ( {
+        uri
+      } ) => {
+        console.log( 'picture saved event', uri )
+      } )
+    } )
+  }
 
-Contributions are very welcome! Please refer to guidelines described in the [contributing guide]( https://github.com/expo/expo#contributing).
+  return (
+    <View
+      style={ StyleSheet.absoluteFill }
+    >
+      <CameraView
+          ref={ camera }
+          style={ StyleSheet.absoluteFill }
+          facing={ 'front' }
+          onCameraReady={ () => { console.log( 'camera is ready' ) } }
+          onMountError={ () => { console.log( 'camera mount error' ) } }
+          faceDetectorSettings={ {
+            mode: FaceDetectorMode.fast,
+            runClassifications: FaceDetectorClassifications.all,
+            minDetectionInterval: 200
+          } }
+          onFacesDetected={ processFaceDetection }
+        />
+    </View>
+  )
+}
+```
+
+## 🔎 About
+
+Min Android/IOS versions:
+
+- `Android SDK`: `26` (Android 8)
+- `IOS`: `13.4`
+
+## 👷 Built With
+
+- [React Native](https://reactnative.dev/)
+- [Google MLKit](https://developers.google.com/ml-kit)
+- [Expo Module](https://docs.expo.dev/modules/get-started/)
+
+## 📚 Author
+
+Made with ❤️ by [nonam4](https://github.com/nonam4)
