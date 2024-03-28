@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.camera.core.AspectRatio
 import androidx.camera.core.Camera
 import androidx.camera.core.CameraInfo
 import androidx.camera.core.CameraSelector
@@ -142,6 +143,7 @@ class CameraView(
 
                 Log.d("FaceDetector", "building preview")
                 val preview = Preview.Builder()
+                    .setTargetAspectRatio(AspectRatio.RATIO_16_9)
                     .build()
                     .also {
                         it.setSurfaceProvider(previewView.surfaceProvider)
@@ -151,7 +153,9 @@ class CameraView(
                     .requireLensFacing(lenFacing.mapToCharacteristic())
                     .build()
 
-                imageCaptureUseCase = ImageCapture.Builder().build()
+                imageCaptureUseCase = ImageCapture.Builder()
+                .setTargetAspectRatio(AspectRatio.RATIO_16_9)
+                .build()
                 imageAnalysisUseCase = createImageAnalyzer()
 
                 Log.d("FaceDetector", "applying useCases")
