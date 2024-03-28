@@ -16,7 +16,7 @@ class FaceDetector(
     val onComplete: (ArrayList<Bundle>) -> Unit
 ) : ImageAnalysis.Analyzer {
     // device display data
-    // divide size by density so we can have
+    // divide size by density so we can have real screen px size
     private var density = Resources.getSystem().displayMetrics.density
     private var windowWidth = Resources.getSystem().displayMetrics.widthPixels / density
     private var windowHeight = Resources.getSystem().displayMetrics.heightPixels / density
