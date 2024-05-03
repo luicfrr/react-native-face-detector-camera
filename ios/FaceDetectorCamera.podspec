@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.homepage       = package['homepage']
   s.platform       = :ios, '13.4'
   s.swift_version  = '5.4'
-  s.source         = { git: 'https://github.com/nonam4/react-native-face-detector-camera' }
+  s.source         = { git: 'https://github.com/luicfrr/react-native-face-detector-camera' }
   s.static_framework = true
 
   s.dependency 'ExpoModulesCore'

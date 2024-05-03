@@ -22,13 +22,13 @@
     "face detector",
     "face detection"
   ],
-  "repository": "https://github.com/nonam4/react-native-face-detector-camera",
+  "repository": "https://github.com/luicfrr/react-native-face-detector-camera",
   "bugs": {
-    "url": "https://github.com/nonam4/react-native-face-detector-camera/issues"
+    "url": "https://github.com/luicfrr/react-native-face-detector-camera/issues"
   },
-  "author": "nonam4 (https://github.com/nonam4)",
+  "author": "luicfrr (https://github.com/luicfrr)",
   "license": "MIT",
-  "homepage": "https://github.com/nonam4/react-native-face-detector-camera#readme",
+  "homepage": "https://github.com/luicfrr/react-native-face-detector-camera#readme",
   "dependencies": {},
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.1",

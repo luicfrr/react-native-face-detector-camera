@@ -2,7 +2,7 @@
 
 `react-native-face-detector-camera` is an Expo module that uses device's front camera and MLKit to detect faces in real-time and visualize the detected face on the screen.
 
-If this package helped you please give it a ⭐ on [GitHub](https://github.com/nonam4/react-native-face-detector-camera).
+If this package helped you please give it a ⭐ on [GitHub](https://github.com/luicfrr/react-native-face-detector-camera).
 
 ## ❗ Warning
 
@@ -150,4 +150,4 @@ Min Android/IOS versions:
 
 ## 📚 Author
 
-Made with ❤️ by [nonam4](https://github.com/nonam4)
+Made with ❤️ by [luicfrr](https://github.com/luicfrr)
